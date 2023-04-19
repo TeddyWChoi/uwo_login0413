@@ -1959,6 +1959,7 @@
               >Sign in</a
             >
           </div>
+
           <div class="performance_container" v-if="isSignIn">
             <i class="uw2-icon-lighthouse"></i>
             <p class="performance--title">My performance</p>
@@ -1970,17 +1971,18 @@
                   :style="{ 'background-image': 'url(https://blackshotupload.s3.amazonaws.com/'+ userPhoto +')'}"
                 ></div>
               </div>
-              <div class="spent innerbox">
-                <p class="title">Login Count</p>
-                <p class="number" v-html="spentComma"></p>
-                <p v-if="spentComma" class="currency">UWC</p>
+              <div class="innerbox">
+                <p class="title">Total Days Logged-In</p>
+                <p class="number">0</p>
+               
               </div>
-              <div class="next_tier innerbox">
-                <p class="title">Next reward</p>
-                <div class="next_rewards_wrapper">
-                  <img v-if="nextRewardImgPath" class="next--img" :src="imgUrl + nextRewardImgPath" />
-                  <p class="next_title" v-html="nextRewardTitle"></p>
-                </div>
+              <div class="innerbox">
+                <p class="title">Days to Next Reward</p>
+                <p class="number">0</p>
+              </div>
+              <div class="innerbox">
+                <p class="title">Items<br/>Received</p>
+                <p class="number">0</p>
               </div>
             </div>
           </div>
@@ -2088,7 +2090,7 @@
           userPhoto: 'PI/9/1/a/woonggu/pi.png' || '',
           spentUWC: 0,
           spentComma: '',
-          isSignIn: isLogin == 0 ? false : true,
+          isSignIn: isLogin == 1 ? false : true,
           nextRewardImgPath: '',
           nextRewardTitle: '',
           isErrorMessage: false,
